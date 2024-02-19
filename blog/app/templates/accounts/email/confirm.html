@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macros %}
+
+
+{% block title %}
+	{{ _('Email confirmation') }}
+{% endblock %}
+
+
+{% block content %}
+	<h1 align="center">
+		{{ _('Do you want to confirm your email?') }}:
+	</h1>
+
+	<form method="POST">
+		{{ macros.render_form_body(form) }}
+	</form>
+{% endblock %}

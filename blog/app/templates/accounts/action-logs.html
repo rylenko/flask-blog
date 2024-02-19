@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macros %}
+
+
+{% block title %}
+	{{ _('Action logs') }}
+{% endblock %}
+
+
+{% block content %}
+	<h1 align="center" class="mb-4">{{ _('Last action logs') }}:</h1>
+
+	{% if page.items %}
+		{% for timestamp, message in page.items %}
+			<div class="card mb-4">
+				<div class="card-header">
+					{{ _('Created %(date)s', date=naturaltime(timestamp)) }}
+				</div>
+				<div class="card-body">
+					<blockquote class="blockquote mb-0">
+						<img src="{{ get_image_url(filename=current_user.image_filename, size=64) }}">
+						- {{ message }}
+					</blockquote>
+				</div>
+			</div>
+		{% endfor %}
+
+		{{ macros.render_pagination_widget(page, 'accounts.action_logs') }}
+	{% else %}
+		<h3 align="center">{{ _("You don't have action logs yet.") }}</h3>
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+	{{ _('OAuth providers list') }}
+{% endblock %}
+
+
+{% block content %}
+	<h1 align="center" class="mb-4">{{ _('OAuth providers list') }}:</h1>
+
+	{% for bp in oauth_blueprints %}
+		{% set has_this_bind = current_user.has_oauth_bind(bp.name) %}
+
+		<div class="card" id="{{ bp.name }}">
+			<h5 class="card-header">
+				{{ bp.name }}
+
+				{% if has_this_bind %}
+					<span style="color: darkgreen">({{ _('Binded') }})</span>
+				{% else %}
+					<span style="color: darkred">({{ _('Not binded') }})</span>
+				{% endif %}
+			</h5>
+			<div class="card-body">
+				{% if has_this_bind %}
+					<form method="POST" action="{{ url_for('accounts.unbind_oauth', provider=bp.name) }}">
+						<input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+						<button type="submit" class="btn btn-danger">{{ _('Unbind') }}</button>
+					</form>
+				{% else %}
+					<a href="{{ url_for('accounts.oauths_' + bp.name) }}" class="btn btn-success">
+						{{ _('Bind') }}
+					</a>
+				{% endif %}
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}

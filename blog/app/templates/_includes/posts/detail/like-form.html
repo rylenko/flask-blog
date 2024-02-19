@@ -1,0 +1,15 @@
+
+{% if current_user.is_authenticated and post.check_like(sender=current_user) %}
+	{% set like_form_action = url_for('posts.unlike', slug=post.slug) %}
+	{% set like_form_button_color_class = "btn-success" %}
+{% else %}
+	{% set like_form_action = url_for('posts.like', slug=post.slug) %}
+	{% set like_form_button_color_class = "btn-outline-danger" %}
+{% endif %}
+
+<form method="POST" action="{{ like_form_action }}" class="mb-3">
+	<input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+	<button type="submit" class='btn {{ like_form_button_color_class }} btn-lg btn-block mb-2'>
+		{{ _('Likes') }}: {{ post.likes.count() }}
+	</button>
+</form>

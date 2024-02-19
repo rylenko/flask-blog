@@ -1,0 +1,27 @@
+
+.mini-admin-panel {
+	border: 5px solid gray;
+	border-radius: 8px;
+
+	position: fixed;
+	top: 100px;
+	right: 50px;
+
+	padding: 5px;
+	opacity: 0.5;
+}
+
+.mini-admin-panel:hover {
+	opacity: 1;
+}
+
+.mini-admin-panel a {
+	display: block;
+	margin: 3px 0;
+}
+
+.post-comment-text {
+	width: 650px;
+	display: block;
+	word-wrap: break-word;
+}

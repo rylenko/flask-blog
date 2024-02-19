@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+	{{ _('Account has been deactivated') }}
+{% endblock %}
+
+
+{% block content %}
+	<h3 align="center" style="color: rgb(129, 0, 0)">
+		{{ _('This account has been deactivated. Reasons why this could happen') }}:
+	</h3>   
+
+	<ul>
+		<li><h3>{{ _('User deactivated account.') }}</h3></li>
+		<li><h3>{{ _('User has received more than three warnings.') }}</h3></li>
+	</ul>
+{% endblock %}

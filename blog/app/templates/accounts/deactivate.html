@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macros %}
+
+
+{% block title %}
+	{{ _('Deactivate account') }}
+{% endblock %}
+
+
+{% block content %}
+	<h1 class="mb-4" align="center">
+		{{ _('Deactivate your account') }}:
+	</h1>
+
+	<form method="POST">
+		{{ macros.render_form_body(form) }}
+	</form>
+{% endblock %}

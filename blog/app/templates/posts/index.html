@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macros with context %}
+
+
+{% block title %}
+	{{ _('Posts list') }}
+{% endblock %}
+
+
+{% block content %}
+	<h1 align="center" class="mb-4">{{ _('Posts list') }}:</h1>
+
+	{% if page.items %}
+		{% for post in page.items %}
+			{{ macros.render_post_list_card(post) }}
+		{% endfor %}
+
+		{{ macros.render_pagination_widget(page, 'posts.index') }}
+	{% else %}
+		<h2 align="center">
+			{{ _('No posts have been created on this site yet.') }}
+		</h2>
+	{% endif %}
+{% endblock %} 

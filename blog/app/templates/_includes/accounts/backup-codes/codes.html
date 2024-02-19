@@ -1,0 +1,12 @@
+
+<h2 align="center">{{ _('Save your backup codes') }}:</h1>
+
+<ul>
+	{% for code in codes %}
+		<li><h4>{{ code }}</h4></li>
+	{% endfor %}
+</ul>
+
+<h5 align="center" style="color: darkred;">
+	{{ _('Codes are deleted after they are used!') }}
+</h5>

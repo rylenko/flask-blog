@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macro %}
+
+
+{% block title %}
+	{{ _('Create post') }}
+{% endblock %}
+
+
+{% block content %}
+	<h2 align="center" class="mb-4">
+		{{ _('Enter data to create a new post') }}:
+	</h2>
+
+	<form method="POST" enctype="multipart/form-data">
+		{{ macro.render_form_body(form) }}
+	</form>
+{% endblock %}

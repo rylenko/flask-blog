@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+	{{ _('Sessions list') }}
+{% endblock %}
+
+
+{% block content %}
+	<h1 align="center" class="mb-4">{{ _('Sessions list') }}:</h1>
+
+	{% for obj in objects %}
+		{% include '_includes/accounts/sessions/card.html' %}
+	{% endfor %}
+{% endblock %}
+
+
+{% block js %}
+	<script>
+		const messages = {
+			sessionTerminatedSuccess: "{{ _('Your session was terminated successfully.') }}",
+			areYouSureTerminateSession: "{{ _('Do you really want to terminate this session?') }}",
+		}
+	</script>
+	<script src="{{ url_for('static', filename='js/utils.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/accounts/sessions.js') }}"></script>
+{% endblock %}

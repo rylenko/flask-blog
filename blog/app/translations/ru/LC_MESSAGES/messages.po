@@ -1,0 +1,1164 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-03-14 12:54+0000\n"
+"PO-Revision-Date: 2020-10-20 15:38+0700\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: app/__init__.py:106
+msgid "Please log in to access this page."
+msgstr ""
+
+#: app/fields.py:23
+msgid "You can't do this because your email is not confirmed."
+msgstr ""
+
+#: app/fields.py:31
+#, python-format
+msgid ""
+"The image should be at least %(width)d pixels wide and %(height)d pixels "
+"high."
+msgstr ""
+
+#: app/fields.py:43
+msgid "Invalid old password."
+msgstr ""
+
+#: app/fields.py:47
+msgid "Image"
+msgstr ""
+
+#: app/fields.py:51
+msgid "Image extension not supported."
+msgstr ""
+
+#: app/fields.py:68
+msgid "Email"
+msgstr ""
+
+#: app/fields.py:72
+msgid "Enter email of your account..."
+msgstr ""
+
+#: app/fields.py:76
+msgid "Email field is required."
+msgstr ""
+
+#: app/fields.py:77
+msgid "The string entered is not email."
+msgstr ""
+
+#: app/fields.py:78
+#, python-format
+msgid ""
+"Email length must not be less than %(min)d and more than %(max)d "
+"characters."
+msgstr ""
+
+#: app/fields.py:95
+msgid "Username"
+msgstr ""
+
+#: app/fields.py:99
+msgid "Enter username of your account..."
+msgstr ""
+
+#: app/fields.py:103
+msgid "Username field is required."
+msgstr ""
+
+#: app/fields.py:104
+#, python-format
+msgid ""
+"Username length must not be less than %(min)d and more than %(max)d "
+"characters."
+msgstr ""
+
+#: app/fields.py:121
+msgid "Password"
+msgstr ""
+
+#: app/fields.py:125
+msgid "Enter password of your account..."
+msgstr ""
+
+#: app/fields.py:129
+msgid "Password field is required."
+msgstr ""
+
+#: app/fields.py:130
+#, python-format
+msgid ""
+"Password length must not be less than %(min)d and more than %(max)d "
+"characters."
+msgstr ""
+
+#: app/fields.py:144
+msgid "Password confirm"
+msgstr ""
+
+#: app/fields.py:147
+msgid "Confirm your password of account..."
+msgstr ""
+
+#: app/fields.py:151
+msgid "Password confirm field is required."
+msgstr ""
+
+#: app/fields.py:152 app/fields.py:216
+msgid "Passwords must match."
+msgstr ""
+
+#: app/fields.py:163
+msgid "Old password"
+msgstr ""
+
+#: app/fields.py:166
+msgid "Enter your old password of account..."
+msgstr ""
+
+#: app/fields.py:170
+msgid "Old password field is required."
+msgstr ""
+
+#: app/fields.py:185
+msgid "New password"
+msgstr ""
+
+#: app/fields.py:189
+msgid "Enter new password of your account..."
+msgstr ""
+
+#: app/fields.py:193
+msgid "New password field is required."
+msgstr ""
+
+#: app/fields.py:194
+#, python-format
+msgid ""
+"New password length must not be less than %(min)d and more than %(max)d "
+"characters."
+msgstr ""
+
+#: app/fields.py:208
+msgid "New password confirm"
+msgstr ""
+
+#: app/fields.py:211
+msgid "Confirm your new password of your account..."
+msgstr ""
+
+#: app/fields.py:215
+msgid "New password confirm field is required."
+msgstr ""
+
+#: app/fields.py:228 app/posts/forms.py:135
+msgid "Submit"
+msgstr ""
+
+#: app/fields.py:238
+msgid "Captcha field is required."
+msgstr ""
+
+#: app/utils.py:104
+msgid "You have successfully logged into your account."
+msgstr ""
+
+#: app/accounts/forms.py:20
+msgid "Log in"
+msgstr ""
+
+#: app/accounts/forms.py:36
+msgid "Invalid email or password."
+msgstr ""
+
+#: app/accounts/forms.py:47 app/templates/accounts/register.html:6
+msgid "Register"
+msgstr ""
+
+#: app/accounts/forms.py:59 app/accounts/forms.py:171
+msgid "A user with this email already exists."
+msgstr ""
+
+#: app/accounts/forms.py:63 app/accounts/forms.py:177
+msgid "A user with this name already exists."
+msgstr ""
+
+#: app/accounts/forms.py:71
+msgid "TOTP"
+msgstr ""
+
+#: app/accounts/forms.py:73
+msgid "TOTP field is required."
+msgstr ""
+
+#: app/accounts/forms.py:74
+#, python-format
+msgid "TOTP length must not be more or less than %(max)d characters."
+msgstr ""
+
+#: app/accounts/forms.py:80
+msgid "Enter current TOTP..."
+msgstr ""
+
+#: app/accounts/forms.py:91
+msgid "Invalid current TOTP."
+msgstr ""
+
+#: app/accounts/forms.py:99
+msgid "Backup code"
+msgstr ""
+
+#: app/accounts/forms.py:101
+msgid "Backup code field is required."
+msgstr ""
+
+#: app/accounts/forms.py:102
+#, python-format
+msgid "Backup code length must not be more or less than %(max)d characters."
+msgstr ""
+
+#: app/accounts/forms.py:109
+msgid "Enter one of your backup codes..."
+msgstr ""
+
+#: app/accounts/forms.py:120
+msgid "Invalid backup code."
+msgstr ""
+
+#: app/accounts/forms.py:131
+msgid "Information"
+msgstr ""
+
+#: app/accounts/forms.py:132
+#, python-format
+msgid "Information length must not be more than %(max)d characters."
+msgstr ""
+
+#: app/accounts/forms.py:136
+msgid "Enter your information..."
+msgstr ""
+
+#: app/accounts/forms.py:139 app/templates/accounts/profile.html:25
+#: app/templates/users/detail.html:35
+msgid "Location"
+msgstr ""
+
+#: app/accounts/forms.py:140
+#, python-format
+msgid "Location length must not be more than %(max)d characters."
+msgstr ""
+
+#: app/accounts/forms.py:144
+msgid "Enter your location..."
+msgstr ""
+
+#: app/accounts/forms.py:146
+msgid "Receive notifications"
+msgstr ""
+
+#: app/accounts/forms.py:150 app/templates/_macros.html:28
+#: app/templates/tags/detail.html:15
+msgid "Update"
+msgstr ""
+
+#: app/accounts/forms.py:186 app/accounts/forms.py:227
+msgid "Wrong password."
+msgstr ""
+
+#: app/accounts/forms.py:194
+msgid "Set"
+msgstr ""
+
+#: app/accounts/forms.py:203
+msgid "Change"
+msgstr ""
+
+#: app/accounts/forms.py:208
+msgid "You cannot set the same password."
+msgstr ""
+
+#: app/accounts/forms.py:216
+msgid "Deactivate"
+msgstr ""
+
+#: app/accounts/forms.py:233
+msgid "Confirm"
+msgstr ""
+
+#: app/accounts/forms.py:238 app/accounts/forms.py:267
+msgid ""
+"You have recently used mail tokens. Wait a little while until they are "
+"removed."
+msgstr ""
+
+#: app/accounts/forms.py:249
+msgid "Send mail"
+msgstr ""
+
+#: app/accounts/forms.py:259
+msgid "A user with such email does not exist."
+msgstr ""
+
+#: app/accounts/forms.py:263
+msgid "You do not have a password, just log in through OAuth."
+msgstr ""
+
+#: app/accounts/oauth.py:35
+msgid "Request to API failed."
+msgstr ""
+
+#: app/accounts/oauth.py:41
+#, python-format
+msgid "The API response didn't give your %(field)s."
+msgstr ""
+
+#: app/accounts/oauth.py:67
+msgid "This OAuth bind already applies to your account."
+msgstr ""
+
+#: app/accounts/oauth.py:70
+msgid "This OAuth bind applies to other account."
+msgstr ""
+
+#: app/accounts/oauth.py:74
+#, python-format
+msgid "You have successfully bind your %(oauth)s account."
+msgstr ""
+
+#: app/accounts/oauth.py:102
+msgid "Someone is already registered with that email."
+msgstr ""
+
+#: app/accounts/oauth.py:106
+msgid "Someone is already registered with that username."
+msgstr ""
+
+#: app/accounts/oauth.py:119
+#, python-format
+msgid "You have successfully registered via %(oauth)s account."
+msgstr ""
+
+#: app/accounts/oauth.py:126
+msgid "Your account has been deactivated."
+msgstr ""
+
+#: app/accounts/oauth.py:137
+#, python-format
+msgid "You have successfully logged in via %(oauth)s account."
+msgstr ""
+
+#: app/accounts/views.py:105
+msgid "All notifications were successfully deleted."
+msgstr ""
+
+#: app/accounts/views.py:196
+msgid "Used backup code was deleted."
+msgstr ""
+
+#: app/accounts/views.py:199
+msgid "You spent all your backup codes."
+msgstr ""
+
+#: app/accounts/views.py:220
+msgid "You have successfully registered your account."
+msgstr ""
+
+#: app/accounts/views.py:274
+msgid ""
+"By removing the last OAuth bind, you will no longer be able to log in to "
+"your account, as you have no password set."
+msgstr ""
+
+#: app/accounts/views.py:280
+#, python-format
+msgid "Your %(oauth)s was successfully unbinded."
+msgstr ""
+
+#: app/accounts/views.py:289
+msgid "You have successfully logged out of your account."
+msgstr ""
+
+#: app/accounts/views.py:311
+msgid "Your password has been successfully set."
+msgstr ""
+
+#: app/accounts/views.py:333
+msgid "Your password has been successfully changed."
+msgstr ""
+
+#: app/accounts/views.py:355
+msgid "Your account was updated successfully."
+msgstr ""
+
+#: app/accounts/views.py:376
+msgid "You have successfully deactivated your account."
+msgstr ""
+
+#: app/accounts/views.py:410
+msgid "You successfully enabled TOTP."
+msgstr ""
+
+#: app/accounts/views.py:433
+msgid "You successfully disabled TOTP."
+msgstr ""
+
+#: app/accounts/views.py:453
+msgid "Backup codes were successfully generated."
+msgstr ""
+
+#: app/accounts/views.py:470
+msgid "A confirmation mail has been sent."
+msgstr ""
+
+#: app/accounts/views.py:517
+msgid "A reset password mail has been sent."
+msgstr ""
+
+#: app/accounts/views.py:540 app/templates/accounts/password/reset-done.html:11
+msgid "Your password has been successfully reset."
+msgstr ""
+
+#: app/posts/forms.py:23
+msgid "Title"
+msgstr ""
+
+#: app/posts/forms.py:25
+msgid "Title field is required."
+msgstr ""
+
+#: app/posts/forms.py:26
+#, python-format
+msgid ""
+"Title length must not be less than %(min)d and more than %(max)d "
+"characters."
+msgstr ""
+
+#: app/posts/forms.py:32
+msgid "Enter title of your post..."
+msgstr ""
+
+#: app/posts/forms.py:37
+msgid "Preview text"
+msgstr ""
+
+#: app/posts/forms.py:38
+msgid "Preview text field is required."
+msgstr ""
+
+#: app/posts/forms.py:43
+msgid "Enter preview text of your post..."
+msgstr ""
+
+#: app/posts/forms.py:47
+msgid "Text"
+msgstr ""
+
+#: app/posts/forms.py:48 app/posts/forms.py:122
+msgid "Text field is required."
+msgstr ""
+
+#: app/posts/forms.py:53
+msgid "Enter text of your post..."
+msgstr ""
+
+#: app/posts/forms.py:57
+msgid "Slug"
+msgstr ""
+
+#: app/posts/forms.py:58
+#, python-format
+msgid "Slug length must not be more than %(max)d characters."
+msgstr ""
+
+#: app/posts/forms.py:63
+msgid "Enter slug of your post..."
+msgstr ""
+
+#: app/posts/forms.py:66 app/templates/_macros.html:40
+msgid "Tags"
+msgstr ""
+
+#: app/posts/forms.py:106
+msgid "You cannot create a post with this slug."
+msgstr ""
+
+#: app/posts/forms.py:108
+msgid "Post with this slug already exists."
+msgstr ""
+
+#: app/posts/forms.py:120
+msgid "New comment (Markdown is supported)"
+msgstr ""
+
+#: app/posts/forms.py:123
+#, python-format
+msgid "Text length must not be more than %(max)d characters."
+msgstr ""
+
+#: app/posts/forms.py:130
+msgid "Enter text of your new comment..."
+msgstr ""
+
+#: app/posts/views.py:52
+msgid "Your post was created successfully."
+msgstr ""
+
+#: app/posts/views.py:88
+msgid "Your post was updated successfully."
+msgstr ""
+
+#: app/posts/views.py:106
+msgid "Your post was deleted successfully."
+msgstr ""
+
+#: app/posts/views.py:123
+msgid "Your like was added successfully."
+msgstr ""
+
+#: app/posts/views.py:138
+msgid "Your like was deleted successfully."
+msgstr ""
+
+#: app/posts/views.py:151
+msgid "Your comment was created successfully."
+msgstr ""
+
+#: app/posts/views.py:167
+msgid "Your reply was created successfully."
+msgstr ""
+
+#: app/posts/views.py:195
+msgid "Your comment was updated successfully."
+msgstr ""
+
+#: app/tags/forms.py:20
+msgid "Name"
+msgstr ""
+
+#: app/tags/forms.py:22
+msgid "Name field is required."
+msgstr ""
+
+#: app/tags/forms.py:23
+#, python-format
+msgid ""
+"Name length must not be less than %(min)d and more than %(max)d "
+"characters."
+msgstr ""
+
+#: app/tags/forms.py:31
+msgid "Enter the name of your new tag..."
+msgstr ""
+
+#: app/tags/forms.py:36
+msgid "Create"
+msgstr ""
+
+#: app/tags/forms.py:59
+msgid "You cannot create a tag with this name."
+msgstr ""
+
+#: app/tags/forms.py:61
+msgid "Tag with this name already exists."
+msgstr ""
+
+#: app/tags/views.py:32
+msgid "Your tag was created successfully."
+msgstr ""
+
+#: app/tags/views.py:63
+msgid "Your tag was updated successfully."
+msgstr ""
+
+#: app/tags/views.py:81
+msgid "Your tag was deleted successfully."
+msgstr ""
+
+#: app/templates/_macros.html:24 app/templates/accounts/action-logs.html:17
+#, python-format
+msgid "Created %(date)s"
+msgstr ""
+
+#: app/templates/_macros.html:25 app/templates/posts/detail.html:12
+msgid "Author"
+msgstr ""
+
+#: app/templates/_macros.html:29 app/templates/posts/delete.html:17
+#: app/templates/tags/delete.html:17 app/templates/tags/detail.html:16
+msgid "Delete"
+msgstr ""
+
+#: app/templates/_macros.html:36
+msgid "Read"
+msgstr ""
+
+#: app/templates/accounts/action-logs.html:6
+#: app/templates/accounts/profile.html:48
+msgid "Action logs"
+msgstr ""
+
+#: app/templates/accounts/action-logs.html:11
+msgid "Last action logs"
+msgstr ""
+
+#: app/templates/accounts/action-logs.html:30
+msgid "You don't have action logs yet."
+msgstr ""
+
+#: app/templates/accounts/backup-codes.html:5
+msgid "Backup codes"
+msgstr ""
+
+#: app/templates/accounts/deactivate.html:6
+msgid "Deactivate account"
+msgstr ""
+
+#: app/templates/accounts/deactivate.html:12
+msgid "Deactivate your account"
+msgstr ""
+
+#: app/templates/accounts/notifications.html:6
+#: app/templates/accounts/notifications.html:11
+msgid "Notifications list"
+msgstr ""
+
+#: app/templates/accounts/notifications.html:18
+msgid "Delete all notifications."
+msgstr ""
+
+#: app/templates/accounts/notifications.html:27
+msgid "You have no notifications."
+msgstr ""
+
+#: app/templates/accounts/oauths.html:5 app/templates/accounts/oauths.html:10
+msgid "OAuth providers list"
+msgstr ""
+
+#: app/templates/accounts/oauths.html:20
+msgid "Binded"
+msgstr ""
+
+#: app/templates/accounts/oauths.html:22
+msgid "Not binded"
+msgstr ""
+
+#: app/templates/accounts/oauths.html:29
+msgid "Unbind"
+msgstr ""
+
+#: app/templates/accounts/oauths.html:33
+msgid "Bind"
+msgstr ""
+
+#: app/templates/accounts/profile.html:5
+msgid "Profile"
+msgstr ""
+
+#: app/templates/accounts/profile.html:19
+msgid "You have not yet provided information about yourself."
+msgstr ""
+
+#: app/templates/accounts/profile.html:27
+msgid "You have not yet indicated your location."
+msgstr ""
+
+#: app/templates/accounts/profile.html:34
+msgid "Sessions"
+msgstr ""
+
+#: app/templates/accounts/profile.html:39
+msgid "OAuths"
+msgstr ""
+
+#: app/templates/accounts/profile.html:44
+msgid "Notifications"
+msgstr ""
+
+#: app/templates/accounts/profile.html:49
+msgid "Post likes"
+msgstr ""
+
+#: app/templates/accounts/posts/comments.html:6
+#: app/templates/accounts/profile.html:50
+msgid "Post comments"
+msgstr ""
+
+#: app/templates/accounts/profile.html:54 app/templates/users/detail.html:43
+msgid "Warnings"
+msgstr ""
+
+#: app/templates/accounts/profile.html:55
+msgid ""
+"If three warings accumulate, your account will be automatically "
+"deactivated"
+msgstr ""
+
+#: app/templates/accounts/profile.html:60
+msgid "Update Profile"
+msgstr ""
+
+#: app/templates/accounts/profile.html:61
+msgid "Deactivate Account"
+msgstr ""
+
+#: app/templates/accounts/profile.html:64
+msgid "Change Password"
+msgstr ""
+
+#: app/templates/accounts/profile.html:66
+msgid "Set Password"
+msgstr ""
+
+#: app/templates/accounts/profile.html:70
+#: app/templates/accounts/totp/disable.html:6
+msgid "Disable TOTP"
+msgstr ""
+
+#: app/templates/accounts/profile.html:71
+msgid "New Backup Codes"
+msgstr ""
+
+#: app/templates/accounts/profile.html:73
+#: app/templates/accounts/totp/enable.html:6
+msgid "Enable TOTP"
+msgstr ""
+
+#: app/templates/accounts/register.html:12
+msgid "Enter the data for registering a new account"
+msgstr ""
+
+#: app/templates/accounts/sessions.html:5
+#: app/templates/accounts/sessions.html:10
+msgid "Sessions list"
+msgstr ""
+
+#: app/templates/accounts/sessions.html:21
+msgid "Your session was terminated successfully."
+msgstr ""
+
+#: app/templates/accounts/sessions.html:22
+msgid "Do you really want to terminate this session?"
+msgstr ""
+
+#: app/templates/accounts/update.html:6
+msgid "Update account"
+msgstr ""
+
+#: app/templates/accounts/update.html:12
+msgid "Enter your new account information"
+msgstr ""
+
+#: app/templates/accounts/email/confirm-done.html:5
+msgid "Email successfully confirmed"
+msgstr ""
+
+#: app/templates/accounts/email/confirm-done.html:11
+msgid "Your email has been successfully confirmed."
+msgstr ""
+
+#: app/templates/accounts/email/confirm.html:6
+msgid "Email confirmation"
+msgstr ""
+
+#: app/templates/accounts/email/confirm.html:12
+msgid "Do you want to confirm your email?"
+msgstr ""
+
+#: app/templates/accounts/login/index.html:6
+msgid "Login"
+msgstr ""
+
+#: app/templates/accounts/login/index.html:12
+msgid "Enter your account information to enter it"
+msgstr ""
+
+#: app/templates/accounts/login/index.html:21
+msgid "Forgot your password?"
+msgstr ""
+
+#: app/templates/accounts/login/index.html:26
+msgid "OR"
+msgstr ""
+
+#: app/templates/accounts/login/index.html:29
+msgid "Login via GitHub"
+msgstr ""
+
+#: app/templates/accounts/login/two-factor/backup-code.html:6
+msgid "Login | Backup code"
+msgstr ""
+
+#: app/templates/accounts/login/two-factor/backup-code.html:11
+msgid "Enter one of your backup codes"
+msgstr ""
+
+#: app/templates/accounts/login/two-factor/index.html:6
+msgid "Login | TOTP"
+msgstr ""
+
+#: app/templates/accounts/login/two-factor/index.html:11
+#: app/templates/accounts/totp/enable.html:11
+msgid "Enter current TOTP"
+msgstr ""
+
+#: app/templates/accounts/password/change.html:6
+msgid "Password change"
+msgstr ""
+
+#: app/templates/accounts/password/change.html:12
+#: app/templates/accounts/password/set.html:12
+msgid "Enter your new password"
+msgstr ""
+
+#: app/templates/accounts/password/confirm.html:6
+msgid "Enter your password"
+msgstr ""
+
+#: app/templates/accounts/password/confirm.html:12
+msgid "Enter your current password"
+msgstr ""
+
+#: app/templates/accounts/password/reset-done.html:5
+msgid "Password reset successfully"
+msgstr ""
+
+#: app/templates/accounts/password/reset.html:6
+msgid "Password reset"
+msgstr ""
+
+#: app/templates/accounts/password/reset.html:12
+msgid "Enter email of your account"
+msgstr ""
+
+#: app/templates/accounts/password/set.html:6
+msgid "Password set"
+msgstr ""
+
+#: app/templates/accounts/posts/comments.html:12
+msgid "Your post comments"
+msgstr ""
+
+#: app/templates/accounts/posts/comments.html:19
+msgid "You have not yet commented on any posts."
+msgstr ""
+
+#: app/templates/accounts/posts/comments.html:28
+#: app/templates/posts/detail.html:27
+msgid "Do you really want to delete your comment?"
+msgstr ""
+
+#: app/templates/accounts/posts/comments.html:29
+#: app/templates/posts/detail.html:28
+msgid "Your comment was deleted successfully."
+msgstr ""
+
+#: app/templates/accounts/posts/likes.html:6
+msgid "Posts likes"
+msgstr ""
+
+#: app/templates/accounts/posts/likes.html:11
+msgid "Posts that you like"
+msgstr ""
+
+#: app/templates/accounts/posts/likes.html:21
+msgid "You have not liked any posts yet."
+msgstr ""
+
+#: app/templates/accounts/totp/disable.html:11
+msgid "Enter current password"
+msgstr ""
+
+#: app/templates/errors/csrf-missing.html:5
+#: app/templates/errors/csrf-missing.html:12
+msgid "CSRF Token is missing"
+msgstr ""
+
+#: app/templates/errors/forbidden.html:5 app/templates/errors/forbidden.html:12
+msgid "Forbidden"
+msgstr ""
+
+#: app/templates/errors/internal-server.html:5
+#: app/templates/errors/internal-server.html:12
+msgid "Internal Server"
+msgstr ""
+
+#: app/templates/errors/method-not-allowed.html:5
+#: app/templates/errors/method-not-allowed.html:12
+msgid "Method Not Allowed"
+msgstr ""
+
+#: app/templates/errors/not-found.html:5 app/templates/errors/not-found.html:12
+msgid "Not Found"
+msgstr ""
+
+#: app/templates/main/index.html:5
+msgid "Home"
+msgstr ""
+
+#: app/templates/main/index.html:12
+msgid "This is home page"
+msgstr ""
+
+#: app/templates/main/index.html:15
+#, python-format
+msgid "Hello, %(username)s"
+msgstr ""
+
+#: app/templates/posts/create.html:6
+msgid "Create post"
+msgstr ""
+
+#: app/templates/posts/create.html:12
+msgid "Enter data to create a new post"
+msgstr ""
+
+#: app/templates/posts/delete.html:5
+msgid "Delete post"
+msgstr ""
+
+#: app/templates/posts/delete.html:11
+msgid "Are you sure you want to delete the post titled"
+msgstr ""
+
+#: app/templates/posts/detail.html:18
+msgid "Comments"
+msgstr ""
+
+#: app/templates/posts/index.html:6 app/templates/posts/index.html:11
+msgid "Posts list"
+msgstr ""
+
+#: app/templates/posts/index.html:21
+msgid "No posts have been created on this site yet."
+msgstr ""
+
+#: app/templates/posts/search.html:6 app/templates/posts/search.html:12
+msgid "Search posts"
+msgstr ""
+
+#: app/templates/posts/search.html:18
+msgid "Enter your query to find the post you need..."
+msgstr ""
+
+#: app/templates/posts/search.html:20
+msgid "Search"
+msgstr ""
+
+#: app/templates/posts/search.html:32
+msgid "No results were found for your query"
+msgstr ""
+
+#: app/templates/posts/update.html:6
+msgid "Update post"
+msgstr ""
+
+#: app/templates/posts/update.html:12
+msgid "Enter data to update your post"
+msgstr ""
+
+#: app/templates/posts/comments/update.html:6
+msgid "Update post comment"
+msgstr ""
+
+#: app/templates/posts/comments/update.html:12
+msgid "Enter data to update your post comment"
+msgstr ""
+
+#: app/templates/posts/comments/notifications/received-reply.html:2
+msgid "Your comment on the"
+msgstr ""
+
+#: app/templates/posts/comments/notifications/received-reply.html:2
+msgid "received a reply!"
+msgstr ""
+
+#: app/templates/posts/comments/notifications/received-reply.html:2
+msgid "Check"
+msgstr ""
+
+#: app/templates/tags/create.html:6
+msgid "Create tag"
+msgstr ""
+
+#: app/templates/tags/create.html:12
+msgid "Enter data to create a new tag"
+msgstr ""
+
+#: app/templates/tags/delete.html:5
+msgid "Delete tag"
+msgstr ""
+
+#: app/templates/tags/delete.html:11
+msgid "Are you sure you want to delete the tag named"
+msgstr ""
+
+#: app/templates/tags/detail.html:12
+#, python-format
+msgid "All posts of the tag \"%(name)s\""
+msgstr ""
+
+#: app/templates/tags/detail.html:29
+msgid "This tag has no posts yet."
+msgstr ""
+
+#: app/templates/tags/index.html:6 app/templates/tags/index.html:11
+msgid "Tags list"
+msgstr ""
+
+#: app/templates/tags/index.html:23
+msgid "No tags have been created on this site yet."
+msgstr ""
+
+#: app/templates/tags/update.html:6
+msgid "Update tag"
+msgstr ""
+
+#: app/templates/tags/update.html:12
+msgid "Enter data to update tag"
+msgstr ""
+
+#: app/templates/users/detail-not-active.html:5
+msgid "Account has been deactivated"
+msgstr ""
+
+#: app/templates/users/detail-not-active.html:11
+msgid "This account has been deactivated. Reasons why this could happen"
+msgstr ""
+
+#: app/templates/users/detail-not-active.html:15
+msgid "User deactivated account."
+msgstr ""
+
+#: app/templates/users/detail-not-active.html:16
+msgid "User has received more than three warnings."
+msgstr ""
+
+#: app/templates/users/detail.html:16
+msgid "At the moment online."
+msgstr ""
+
+#: app/templates/users/detail.html:20
+#, python-format
+msgid "Was online %(date)s"
+msgstr ""
+
+#: app/templates/users/detail.html:29
+msgid "User has not yet provided information about himself."
+msgstr ""
+
+#: app/templates/users/detail.html:37
+msgid "The user has not yet indicated his location."
+msgstr ""
+
+#: app/templates/users/detail.html:44
+msgid "If three warings accumulate, account will be automatically deactivated"
+msgstr ""
+
+#: app/templates/users/detail.html:48
+msgid "Give warning"
+msgstr ""
+
+#: app/users/views.py:29
+msgid "A warning has been received."
+msgstr ""
+
+#: app/users/views.py:33
+msgid "Your warning has been sent successfully."
+msgstr ""
+
+#~ msgid "Posts"
+#~ msgstr ""
+
+#~ msgid "Posts search"
+#~ msgstr ""
+
+#~ msgid "Logout"
+#~ msgstr ""
+
+#~ msgid "Admin"
+#~ msgstr ""
+
+#~ msgid "Create"
+#~ msgstr ""
+
+#~ msgid "Tags list"
+#~ msgstr ""
+
+#~ msgid "No tags have been created on this site yet."
+#~ msgstr ""
+
+#~ msgid "Likes"
+#~ msgstr ""
+
+#~ msgid "Post"
+#~ msgstr ""
+
+#~ msgid "Tag"
+#~ msgstr ""
+
+#~ msgid "Save your backup codes"
+#~ msgstr ""
+
+#~ msgid "Codes are deleted after they are used!"
+#~ msgstr ""
+
+#~ msgid "You already have the %(count)s codes. You still want to generate?"
+#~ msgstr ""
+
+#~ msgid "Press to generate backup codes"
+#~ msgstr ""
+
+#~ msgid "Generate"
+#~ msgstr ""
+
+#~ msgid "Mark as viewed"
+#~ msgstr ""
+
+#~ msgid "This comment is a reply to another comment."
+#~ msgstr ""
+
+#~ msgid "This is parent comment."
+#~ msgstr ""
+
+#~ msgid "Parent comment page"
+#~ msgstr ""
+
+#~ msgid "Page"
+#~ msgstr ""
+
+#~ msgid "Attention"
+#~ msgstr ""
+
+#~ msgid "edited"
+#~ msgstr ""
+
+#~ msgid "This comment has no replies yet."
+#~ msgstr ""
+
+#~ msgid "New comment"
+#~ msgstr ""
+
+#~ msgid "Remember"
+#~ msgstr ""
+
+#~ msgid "Image field is required."
+#~ msgstr ""
+
+#~ msgid "Replies"
+#~ msgstr ""
+

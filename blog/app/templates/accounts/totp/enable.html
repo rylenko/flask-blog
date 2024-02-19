@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macros %}
+
+
+{% block title %}
+	{{ _('Enable TOTP') }}
+{% endblock %}
+
+
+{% block content %}
+	<h2 align="center">{{ _('Enter current TOTP') }}:</h1>
+
+	<div align="center">
+		<img src="{{ url_for('accounts.totp_qrcode') }}" />
+	</div>
+
+	<form method="POST">
+		{{ macros.render_form_body(form) }}
+	</form>
+{% endblock %}

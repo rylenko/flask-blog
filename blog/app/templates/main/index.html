@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+	{{ _('Home') }}
+{% endblock %}
+
+
+{% block content %}
+	<div align="center">
+		<h1 id="time-widget"></h1>
+		<h1>{{ _('This is home page') }}.</h1>
+
+		{% if current_user.is_authenticated %}
+			<h1>{{ _('Hello, %(username)s', username=current_user.username) }}!</h1>
+		{% endif %}
+	</div>
+{% endblock %}
+
+
+{% block js %}
+	<script src="{{ url_for('static', filename='js/time-widget.js') }}"></script>
+{% endblock %}

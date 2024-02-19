@@ -1,0 +1,56 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<a class="navbar-brand" href="/">FlaskBlog</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			{% with posts_index_url = url_for('posts.index') %}
+				<li class="nav-item {% if posts_index_url in request.path %} active {% endif %}">
+					<a class="nav-link" href="{{ posts_index_url }}">{{ _('Posts') }}</a>
+				</li>
+			{% endwith %}
+
+			{% with tags_index_url = url_for('tags.index') %}
+				<li class="nav-item {% if tags_index_url in request.path %} active {% endif %}">
+					<a class="nav-link" href="{{ tags_index_url }}">{{ _('Tags') }}</a>
+				</li>
+			{% endwith %}
+		</ul>
+
+		<form class="form-inline" style="margin-right: 75px;" action="{{ url_for('posts.search') }}">
+			<input class="form-control mr-sm-2" type="search" name="query" placeholder="{{ _('Posts search') }}..." aria-label="Search">
+		</form>
+
+		<ul class="navbar-nav ml-auto">
+			{% if current_user.is_authenticated %}
+				{% with profile_url = url_for('accounts.profile') %}
+					<li class="nav-item {% if profile_url == request.path %} active {% endif %}">
+						<a class="nav-link" href="{{ profile_url }}">
+							{{ _('Profile') }}
+							(<span id="not-checked-notifications-count">{{ current_user.notifications.filter_by(is_checked=False).count() }}</span>)
+						</a>
+					</li>
+				{% endwith %}
+
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('accounts.logout') }}">{{ _('Logout') }}</a>
+				</li>
+			{% else %}
+				{% with login_url = url_for('accounts.login') %}
+					<li class="nav-item {% if request.path == login_url %} active {% endif %}">
+						<a class="nav-link" href="{{ login_url }}">{{ _('Login') }}</a>
+					</li>
+				{% endwith %}
+
+				{% with register_url = url_for('accounts.register') %}
+					<li class="nav-item {% if request.path == register_url %} active {% endif %}">
+						<a class="nav-link" href="{{ register_url }}">{{ _('Register') }}</a>
+					</li>
+				{% endwith %}
+			{% endif %}
+		</ul>
+	</div>
+</nav>

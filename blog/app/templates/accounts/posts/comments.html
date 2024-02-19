@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macros %}
+
+
+{% block title %}
+	{{ _('Post comments') }}
+
+{% endblock %}
+
+
+{% block content %}
+	<h1 align="center" class="mb-4">{{ _('Your post comments') }}:</h1>
+
+	{% if page.items %}
+		{% include "_includes/accounts/posts/comments/list.html" %}
+		{{ macros.render_pagination_widget(page) }}
+	{% else %}
+		<h2 align="center">
+			{{ _('You have not yet commented on any posts.') }}
+		</h2>
+	{% endif %}
+{% endblock %}
+
+
+{% block js %}
+	<script>
+		const messages = {
+			areYouSureDeleteComment: "{{ _('Do you really want to delete your comment?') }}",
+			commentDeletedSuccess: "{{ _('Your comment was deleted successfully.') }}",
+		}
+	</script>
+	<script src="{{ url_for('static', filename='js/utils.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/posts/detail.js') }}"></script>
+{% endblock %}

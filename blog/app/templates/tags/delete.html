@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+	{{ _('Delete tag') }}
+{% endblock %}
+
+
+{% block content %}
+	<h2 align="center" class="mb-4">
+		{{ _('Are you sure you want to delete the tag named') }}
+		"<a href="{{ url_for('tags.detail', name=tag.name) }}">{{ tag.name }}</a>"?:
+	</h2>
+
+	<form method="POST">
+		<input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+		<button type="submit" class="btn btn-danger">{{ _('Delete') }}</button>
+	</form>
+{% endblock %}

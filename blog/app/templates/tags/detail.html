@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macros with context %}
+
+
+{% block title %}
+	{{ tag.name }}
+{% endblock %}
+
+
+{% block content %}
+	<h3 align="center" class="mb-4">
+		{{ _('All posts of the tag "%(name)s"', name=tag.name) }}
+
+		{% if current_user.is_authenticated and current_user.is_staff %}
+			| <a href="{{ url_for('tags.update', name=tag.name) }}">{{ _('Update') }}</a>
+			| <a href="{{ url_for('tags.delete', name=tag.name) }}" style="color: darkred;">{{ _('Delete') }}</a>
+		{% endif %}
+		:
+	</h1>
+
+	{% if posts_page.items %}
+		{% for post in posts_page.items %}
+			{{ macros.render_post_list_card(post) }}
+		{% endfor %}
+
+		{{ macros.render_pagination_widget(posts_page, 'tags.detail') }}
+	{% else %}
+		<h1 align="center">
+			{{ _('This tag has no posts yet.') }}
+		</h1>
+	{% endif %}
+{% endblock %}

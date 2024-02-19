@@ -1,0 +1,27 @@
+
+<div class="card mb-4">
+	{% if post.image_filename %}
+		<img src="{{ get_image_url(filename=post.image_filename, size=1280) }}" class="card-img-top" />
+	{% endif %}
+	<div class="card-body">
+		<h5 class="card-title">{{ post.title }}</h5>
+		<p class="card-text">{{ post.text|markdown|safe }}</p>
+		<p class="card-text">
+			<small class="text-muted">
+				{{ _('Created %(date)s', date=naturaltime(post.created_at)) }}
+
+				{% if current_user.is_authenticated and current_user.is_staff %}
+					| <a href="{{ url_for('posts.update', slug=post.slug) }}">{{ _('Update') }}</a>
+					| <a href="{{ url_for('posts.delete', slug=post.slug) }}" style="color: darkred;">{{ _('Delete') }}</a>
+				{% endif %}
+			</small>
+		</p>
+	</div>
+	<div class="card-footer text-muted">
+		{{ _('Tags') }}:
+
+		{% for tag in post.tags %}
+			<a href="{{ url_for('tags.detail', name=tag.name) }}">{{ tag.name }}</a>
+		{% endfor %}
+	</div>
+</div>

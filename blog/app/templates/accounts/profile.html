@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+	{{ _('Profile') }}
+{% endblock %}
+
+
+{% block content %}
+	<div class="jumbotron" align="center">
+		<img src="{{ get_image_url(filename=current_user.image_filename, size=250) }}">
+		<h1 class="display-4">{{ current_user.username }}</h1>
+
+		<hr class="my-4">
+
+		{% if current_user.information %}
+			<p class="lead">{{ current_user.information }}</p>
+		{% else %}
+			<p class="lead">{{ _('You have not yet provided information about yourself.') }}</p>
+		{% endif %}
+
+		<hr class="my-4">
+
+		{% if current_user.location %}
+			{{ _('Location') }} - {{ current_user.location }}
+		{% else %}
+			<p>{{ _('You have not yet indicated your location.') }}</p>
+		{% endif %}
+
+		<hr class="my-4">
+
+		<h3>
+			<a href="{{ url_for('accounts.sessions') }}">
+				{{ _('Sessions') }} ({{ current_user.sessions.count() }})
+			</a>
+		</h3>
+		<h3>
+			<a href="{{ url_for('accounts.oauths') }}">
+				{{ _('OAuths') }} ({{ current_user.oauths.count() }})
+			</a>
+		</h3>
+		<h3>
+			<a href="{{ url_for('accounts.notifications') }}">
+				{{ _('Notifications') }}
+				({{ current_user.notifications.filter_by(is_checked=False).count() }})
+			</a>
+		</h3>
+		<h3><a href="{{ url_for('accounts.action_logs') }}">{{ _('Action logs') }}</a></h3>
+		<h3><a href="{{ url_for('accounts.post_likes') }}">{{ _('Post likes') }}</a></h3>
+		<h3><a href="{{ url_for('accounts.post_comments') }}">{{ _('Post comments') }}</a></h3>
+
+		<hr class="my-4">
+
+		<span style="color: darkred;">{{ _('Warnings') }}</span> - {{ current_user.warnings }}         
+		<p class="mb-4">*{{ _('If three warings accumulate, your account will be automatically deactivated') }}*</p>
+
+		<hr class="my-4">
+					
+		<p class="lead">
+			<a class="btn btn-primary btn-lg" href="{{ url_for('accounts.update') }}" role="button">{{ _('Update Profile') }}</a>
+			<a class="btn btn-danger btn-lg" href="{{ url_for('accounts.deactivate') }}" role="button" style="opacity: 0.5;">{{ _('Deactivate Account') }}</a>
+
+			{% if current_user.password_hash %}
+				<a class="btn btn-primary btn-lg" href="{{ url_for('accounts.change_password') }}" role="button">{{ _('Change Password') }}</a>
+			{% else %}
+				<a class="btn btn-success btn-lg" href="{{ url_for('accounts.set_password') }}" role="button">{{ _('Set Password') }}</a>
+			{% endif %}
+
+			{% if current_user.totp_is_enabled %}
+				<a class="btn btn-danger btn-lg" href="{{ url_for('accounts.disable_totp') }}" role="button">{{ _('Disable TOTP') }}</a>
+				<a class="btn btn-primary btn-lg mt-3" href="{{ url_for('accounts.backup_codes') }}" role="button">{{ _('New Backup Codes') }}</a>
+			{% else %}
+				<a class="btn btn-primary btn-lg" href="{{ url_for('accounts.enable_totp') }}" role="button">{{ _('Enable TOTP') }}</a>
+			{% endif %}
+		</p>
+	</div>    
+{% endblock %}

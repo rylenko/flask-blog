@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macros %}
+
+
+{% block title %}
+	{{ _('Login') }}
+{% endblock %}
+
+
+{% block content %}
+	<h2 align="center" class="mb-4">
+		{{ _('Enter your account information to enter it') }}:
+	</h2>
+
+	<form method="POST">
+		{{ macros.render_form_body(form) }}
+	</form>
+
+	<h4 class="mt-4 mb-2">
+		<a href="{{ url_for('accounts.reset_password') }}">
+			{{ _('Forgot your password?') }}
+		</a>
+	</h4>
+
+	<div align="center">
+		<h1 class="mb-4">{{ _('OR') }}:</h1>
+
+		<a class="btn btn-primary" href="{{ url_for('accounts.oauths_github') }}">
+			{{ _('Login via GitHub') }}
+		</a>
+	</div>
+{% endblock %} 

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macros %}
+
+
+{% block title %}
+	{{ _('Notifications list') }}
+{% endblock %}
+
+
+{% block content %}
+	<h1 align="center" class="mb-4">{{ _('Notifications list') }}:</h1>
+
+	{% if page.items %}
+		<form action="{{ url_for('accounts.delete_notifications') }}" method="POST" class="mb-4">
+			<input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+			<div align="center">
+				<button type="submit" class="btn btn-danger">
+					{{ _('Delete all notifications.') }}
+				</button>
+			</div>
+		</form>
+
+		{% include "_includes/accounts/notifications/list.html" %}
+		{{ macros.render_pagination_widget(page, 'accounts.notifications') }}
+	{% else %}
+		<h2 align="center">
+			{{ _('You have no notifications.') }}
+		</h2>
+	{% endif %}
+{% endblock %}
+
+
+
+{% block js %}
+	<script src="{{ url_for('static', filename='js/accounts/notifications.js') }}"></script>
+{% endblock %}

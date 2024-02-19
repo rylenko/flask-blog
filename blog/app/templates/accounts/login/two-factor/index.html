@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macros %}
+
+
+{% block title %}
+	{{ _('Login | TOTP') }}
+{% endblock %}
+
+
+{% block content %}
+	<h2 align="center">{{ _('Enter current TOTP') }}:</h1>
+
+	<form method="POST">
+		{{ macros.render_form_body(form) }}
+	</form>
+
+	{% if user.backup_code_hashes %}
+		<h4 align="center">
+			<a href="{{ url_for('accounts.login_two_factor_backup_code') }}">
+				Use backup code
+			</a>
+		</h4>
+	{% endif %}
+{% endblock %}

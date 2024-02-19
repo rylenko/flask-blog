@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macros %}
+
+
+{% block title %}
+	{{ _('Password set') }}
+{% endblock %}
+
+
+{% block content %}
+	<h2 align="center" class="mb-4">
+		{{ _('Enter your new password') }}:
+	</h2>
+
+	<form method="POST">
+		{{ macros.render_form_body(form) }}
+	</form>
+{% endblock %}

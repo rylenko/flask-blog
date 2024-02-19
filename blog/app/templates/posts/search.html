@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macros with context %}
+
+
+{% block title %}
+	{{ _('Search posts') }}
+{% endblock %}
+
+
+{% block content %}
+	<h1 class="mb-4" align="center">
+		{{ _('Search posts') }}:
+	</h1>
+
+	<form class="mb-4">
+		<input class="form-control form-control-lg mb-1"
+   			type="text" name="query" value="{{ query }}"
+   			placeholder="{{ _('Enter your query to find the post you need...') }}">
+		<button type="submit" class="btn btn-primary btn-lg btn-block mb-4">
+			{{ _('Search') }}
+		</button>
+	</form>
+
+	{% if query %}
+		{% if page.items %}
+			{% for post in page.items %}
+				{{ macros.render_post_list_card(post) }}
+			{% endfor %}
+
+			{{ macros.render_pagination_widget(page, 'posts.search', query=query) }}
+		{% else %}
+			<h2 align="center">{{ _('No results were found for your query') }}.</h2>
+		{% endif %}
+	{% endif %}
+{% endblock %}

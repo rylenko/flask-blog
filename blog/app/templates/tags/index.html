@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macros %}
+
+
+{% block title %}
+	{{ _('Tags list') }}
+{% endblock %}
+
+
+{% block content %}
+	<h1 align="center" class="mb-4">{{ _('Tags list') }}:</h1>
+
+	{% if page.items %}
+		{% for tag in page.items %}
+			<h3 class="mb-4">
+				<a href="{{ url_for('tags.detail', name=tag.name) }}">{{ tag.name }}</a>
+			</h3>
+		{% endfor %}
+
+		{{ macros.render_pagination_widget(page, 'tags.index') }}
+	{% else %}
+		<h2 align="center">
+			{{ _('No tags have been created on this site yet.') }}
+		</h2>
+	{% endif %}
+{% endblock %}

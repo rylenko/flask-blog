@@ -1,0 +1,80 @@
+
+{% macro render_form_body(obj) %}
+	{% for field in obj %}
+		<div class="form-group">
+			{% if field.name != 'csrf_token' %}
+				{{ field.label }}
+			{% endif %}
+
+			{{ field }}
+		</div>
+
+		{% for error in field.errors %}
+			<div class="alert alert-danger">
+				{{ error }}
+			</div>
+		{% endfor %}
+	{% endfor %}
+{% endmacro %}
+
+
+{% macro render_post_list_card(obj) %} 
+	<div class="card mb-4">
+		<div class="card-header">
+			{{ _('Created %(date)s', date=naturaltime(obj.created_at)) }}
+			| <a href="{{ url_for('users.detail', username=obj.author.username) }}">{{ _('Author') }}</a>
+
+			{% if current_user.is_authenticated and current_user.is_staff %}
+				| <a href="{{ url_for('posts.update', slug=obj.slug) }}">{{ _('Update') }}</a>
+				| <a href="{{ url_for('posts.delete', slug=obj.slug) }}" style="color: darkred;">{{ _('Delete') }}</a>
+			{% endif %}
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">{{ obj.title }}</h5>
+			<p class="card-text">{{ obj.preview_text }}</p>
+			<a href="{{ url_for('posts.detail', slug=obj.slug) }}" class="btn btn-primary">
+				{{ _('Read') }}
+			</a>
+		</div>
+		<div class="card-footer text-muted">
+			{{ _('Tags') }}:
+
+			{% for tag in obj.tags %}
+				<a href="{{ url_for('tags.detail', name=tag.name) }}">{{ tag.name }}</a>
+			{% endfor %}
+		</div>
+	</div>
+{% endmacro %}
+
+
+{% macro render_pagination_widget(obj, endpoint) %}
+	{% if obj.pages > 1 %}
+		<nav aria-label="Page navigation example">
+			<ul class="pagination">
+				<li class="page-item {% if not obj.has_prev %} disabled {% endif %}">
+					<a class="page-link" aria-label="Previous"
+   					href="{{ url_for(endpoint, page=obj.prev_num, **kwargs) }}">
+						<span aria-hidden="true">&laquo;</span>
+					</a>
+				</li>
+
+				{% for number in range(1, obj.pages+1) %}
+					{% if number > obj.page-3 and number < obj.page+3 %}
+						<li class="page-item {% if number == obj.page %} active {% endif %}">
+							<a class="page-link" href="{{ url_for(endpoint, page=number, **kwargs) }}">
+								{{ number }}
+							</a>
+						</li>
+					{% endif %}
+				{% endfor %}
+
+				<li class="page-item {% if not obj.has_next %} disabled {% endif %}">
+					<a class="page-link" aria-label="Next"
+   					href="{{ url_for(endpoint, page=obj.next_num, **kwargs) }}">
+						<span aria-hidden="true">&raquo;</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	{% endif %}
+{% endmacro %}

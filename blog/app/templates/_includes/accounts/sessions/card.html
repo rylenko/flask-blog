@@ -1,0 +1,37 @@
+
+<div class="card mb-4" id="session-{{ obj.id }}">
+	<div class="card-header">
+		{{ _('Status') }} - 
+
+		{% if obj.key == session.key %}
+			<span style="color: darkgreen">{{ _('Current session') }}</span>
+		{% elif not obj.expired %}
+			<span style="color: darkcyan">{{ _('Active session') }}</span>
+		{% else %}
+			<span style="color: darkred">{{ _('Expired session') }}</span>
+		{% endif %}
+	</div>
+	<div class="card-body">
+		<blockquote class="blockquote mb-0">
+			<p>{{ obj.agent }}</p>
+			
+			{% if obj.key != session.key %}
+				<button class="btn btn-danger" session-id="{{ obj.id }}"
+						terminate-url="{{ url_for('accounts.terminate_session', id=obj.id) }}"
+						onclick="onClickSessionTerminateButton(this)"
+				>{{ _('Terminate') }}</button>
+			{% endif %}
+		</blockquote>
+	</div>
+	<div class="card-footer text-muted">
+		{{ _('Last online %(date)s', date=naturaltime(obj.last_online)) }} |
+
+		{% with date = naturaltime(obj.expires_at) %}
+			{% if obj.expired %}
+				{{ _('Expired %(date)s', date=date) }}
+			{% else %}
+				{{ _('Expires %(date)s', date=date) }}
+			{% endif %}
+		{% endwith %}
+	</div>
+</div>

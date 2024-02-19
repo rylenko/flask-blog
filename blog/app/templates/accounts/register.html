@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macros %}
+
+
+{% block title %}
+	{{ _('Register') }}
+{% endblock %}
+
+
+{% block content %}
+	<h2 align="center" class="mb-4">
+		{{ _('Enter the data for registering a new account') }}:
+	</h2>
+
+	<form method="POST">
+		{{ macros.render_form_body(form) }}
+	</form>
+{% endblock %}

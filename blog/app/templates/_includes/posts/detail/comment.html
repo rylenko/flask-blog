@@ -1,0 +1,52 @@
+
+{% set comment_author_link = url_for('users.detail', username=comment.author.username) %}
+
+<div class="infinite-item
+ 	{% if comment.parent %}
+		comment-{{ comment.parent.id }}-child
+ 	{% endif %}" id="comment-{{ comment.id }}"
+	author-username="{{ comment.author.username }}"
+	reply-url="{{ url_for('posts.reply_comment', id=comment.id) }}"
+>
+	<div class="media mb-4">
+		<a class="mr-3" href="{{ comment_author_link }}">
+			<img src="{{ get_image_url(filename=comment.author.image_filename, size=64) }}" class="mr-3">
+		</a>
+		<div class="media-body">
+			<h5 class="mt-0">
+				<a href="{{ comment_author_link }}">
+					{{ comment.author.username }}
+				</a>
+
+				| {{ _('Created %(date)s', date=naturaltime(comment.created_at)) }}
+
+				{% if comment.was_updated %}
+					| <span style="color:grey">({{ _('edited') }})</span>
+				{% endif %}
+
+				| <a href="#comments-title" onclick="onClickReplyButton('{{ comment.id }}');">{{ _('Reply') }}</a>
+					
+				{% if check_rights_on_object(comment) %}
+					| <a href="{{ url_for('posts.update_comment', id=comment.id, next=request.url) }}">
+						{{ _('Update') }}
+  					</a>
+					| <a style="color: darkred;" onclick="onClickCommentDeleteButton(this)"
+						delete-url="{{ url_for('posts.delete_comment', id=comment.id) }}"
+						comment-id="{{ comment.id }}"
+					>{{ _('Delete') }}</a>
+				{% endif %}
+			</h5>
+				
+			<div class="post-comment-text">
+				{% if comment.parent %}
+					({{ _("The reply on %(username)s's", username=comment.parent.author.username) }}
+					<a href="#comment-{{ comment.parent.id }}">
+						"{{ comment.parent.text|truncate(30, True, '...') }}"
+					</a>)
+				{% endif %}
+
+				{{ comment.text|safe }}
+			</div>
+		</div>
+	</div>
+</div>

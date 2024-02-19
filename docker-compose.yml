@@ -1,0 +1,60 @@
+version: "3.7"
+
+services:
+  blog:
+	build: ./blog
+	container_name: blog
+	env_file: ./blog/.env
+	environment:
+  	- FLASK_APP=app
+	depends_on:
+  	- db
+  	- action-logs-storage
+  	# - celery-broker
+	volumes:
+  	- ./blog/migrations:/usr/src/migrations
+  	- ./blog/app/media:/usr/src/app/media
+	expose:
+  	- 80
+
+  nginx:
+	build: ./nginx
+	container_name: nginx
+	depends_on:
+  	- blog
+	ports:
+  	- 80:80
+
+  db:
+	image: postgres
+	container_name: db
+	env_file: ./blog/.env
+	volumes: 
+  	- pgdata:/var/lib/postgresql/data
+	expose:
+  	- 5432
+
+  action-logs-storage:
+	image: redis
+	container_name: action-logs-storage
+	volumes:
+  	- ./action-logs-storage:/var/lib/redis
+	expose:
+  	- 6379
+
+  # If you need a celery broker that works in a docker container
+  # (Logically, you would need a different broker for the tests),
+  # you can uncomment the code below, but before that do:
+  # 1. Add `CELERY_BROKER_URL=redis://celery-broker:6379/0` to ./blog/.env
+  # 2. Uncomment the `celery-broker` line in `depends_on` in the `blog` container
+  #
+  # celery-broker:
+  #   image: redis
+  #   container_name: celery-broker
+  #   volumes:
+  #     - ./celery-broker:/var/lib/redis
+  #   expose: 
+  #     - 6379
+
+volumes: 
+  pgdata:

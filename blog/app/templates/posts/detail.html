@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macros %}
+
+
+{% block title %}
+	{{ post.title }}
+{% endblock %}
+
+
+{% block content %}
+	<h3 align="center">
+		<a href="{{ url_for('users.detail', username=post.author.username) }}">{{ _('Author') }}</a>
+	</h3>
+
+	{% include "_includes/posts/detail/like-form.html" %}
+	{% include "_includes/posts/detail/card.html" %}
+
+	<h1 align="center" id="comments-title">{{ _('Comments') }}:</h1>
+	{% include "_includes/posts/detail/comments.html" %}
+{% endblock %}
+
+
+{% block js %}
+	<script>
+		const commentPostURL = "{{ url_for('posts.comment', slug=post.slug) }}";
+		const messages = {
+			areYouSureDeleteComment: "{{ _('Do you really want to delete your comment?') }}",
+			commentDeletedSuccess: "{{ _('Your comment was deleted successfully.') }}",
+		}
+	</script>
+	<script src="{{ url_for('static', filename='js/jquery.waypoints.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/infinite.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/utils.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/posts/detail.js') }}"></script>
+{% endblock %}

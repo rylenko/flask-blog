@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+	{{ user.username }}
+{% endblock %}
+
+
+{% block content %}
+	<div class="jumbotron" align="center">
+		<img src="{{ get_image_url(filename=user.image_filename, size=250) }}">
+		<h1 class="display-4">{{ user.username }}</h1>
+
+		{% if user.is_online %}
+			<p style="color: darkgreen;">
+				{{ _('At the moment online.') }}
+			</p>
+		{% else %}
+			<p style="color: darkcyan">
+				{{ _('Was online %(date)s', date=naturaltime(user.last_online)) }}
+			</p>
+		{% endif %}
+
+		<hr class="my-4">
+
+		{% if user.information %}
+			<p class="lead">{{ user.information }}</p>
+		{% else %}
+			<p class="lead">{{ _('User has not yet provided information about himself.') }}</p>
+		{% endif %}
+
+		<hr class="my-4">
+
+		{% if user.location %}
+			{{ _('Location') }} - {{ user.location }}
+		{% else %}
+			<p>{{ _('The user has not yet indicated his location.') }}</p>
+		{% endif %}
+
+		{% if current_user.is_staff and not user.is_staff %}
+			<hr class="my-4">
+
+			<span style="color: darkred;">{{ _('Warnings') }}</span> - {{ user.warnings }}         
+			<p class="mb-4">*{{ _('If three warings accumulate, account will be automatically deactivated') }}*</p>
+
+			<form method="POST" action="{{ url_for('users.warn', username=user.username) }}">
+				<input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+				<button type="submit" class="btn btn-danger">{{ _('Give warning') }}</button>
+			</form>
+		{% endif %}
+	</div>    
+{% endblock %}

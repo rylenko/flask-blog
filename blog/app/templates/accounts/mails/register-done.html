@@ -1,0 +1,14 @@
+<div>
+	<h1>Hello, {{ username }}!</h1>
+	<h3>You have successfully registered on Flask-Blog!</h3>
+
+	<p>
+		As you can see, you need to confirm your mail <br/> 
+		in order to have access to all the features on our website
+	</p>
+
+	<p>
+		In order to confirm your mail, you need to click on this link: </br>
+		- <a href="{{ email_confirm_url }}">{{ email_confirm_url }}</a>
+	</p>
+</div> 

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+	{{ _('Backup codes') }}
+{% endblock %}
+
+
+{% block content %}
+	{% if codes %}
+		{% include "_includes/accounts/backup-codes/codes.html" %}
+	{% else %}
+		{% include "_includes/accounts/backup-codes/generate.html" %}
+	{% endif %}
+{% endblock %}

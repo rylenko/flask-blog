@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macros with context %}
+
+
+{% block title %}
+	{{ _('Posts likes') }}
+{% endblock %}
+
+
+{% block content %}
+	<h1 align="center" class="mb-4">{{ _('Posts that you like') }}:</h1>
+
+	{% if page.items %}
+		{% for like in page.items %}
+			{{ macros.render_post_list_card(like.post) }}
+		{% endfor %}
+
+		{{ macros.render_pagination_widget(page, 'accounts.post_likes') }}
+	{% else %}
+		<h2 align="center">
+			{{ _('You have not liked any posts yet.') }}
+		</h2>
+	{% endif %}
+{% endblock %}

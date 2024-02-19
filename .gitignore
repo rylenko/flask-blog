@@ -1,0 +1,22 @@
+# Cache and logs
+__pycache__
+.pytest_cache
+.mypy_cache
+blog/app/logs
+
+# Environment
+.env
+
+# Docker
+celery-broker
+action-logs-storage
+
+# Testing
+blog/app/test_media
+blog/tests/testing.db
+blog/tests/testing.db-journal
+blog/tests/cassettes/*
+
+# Media
+blog/app/media/images/*
+!blog/app/media/images/user-default.png

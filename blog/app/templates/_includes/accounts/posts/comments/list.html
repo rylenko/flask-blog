@@ -1,0 +1,30 @@
+
+{% for comment in page.items %}
+	<div class="card mb-4" id="comment-{{ comment.id }}">
+		<div class="card-header">
+			{{ _('Created %(date)s', date=naturaltime(comment.created_at)) }}
+		</div>
+		<div class="card-body">
+			<blockquote class="blockquote mb-0">
+				<p>{{ comment.text|truncate(140, True, '...') }}</p>
+				<footer class="blockquote-footer">
+					<a href="{{ url_for('posts.detail', slug=comment.post.slug) }}">
+						{{ comment.post.title }}
+					</a>
+				</footer>
+			</blockquote>
+		</div>
+		<div class="card-footer text-muted">
+			{% if comment.parent %}
+				{{ _('This comment is a reply to another comment.') }}
+			{% else %}
+				{{ _('This is parent comment.') }}
+			{% endif %}
+
+			| <a href="{{ url_for('posts.update_comment', id=comment.id) }}">{{ _('Update') }}</a>
+			| <a style="color: darkred;" onclick="onClickCommentDeleteButton(this)"
+				delete-url="{{ url_for('posts.delete_comment', id=comment.id) }}"
+				comment-id="{{ comment.id }}">{{ _('Delete') }}</a>
+		</div>
+	</div>
+{% endfor %}

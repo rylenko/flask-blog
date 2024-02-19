@@ -1,0 +1,24 @@
+
+{% for notification in page.items %}
+	<div class="card mb-4">
+		<div class="card-header">
+			{{ _('Created %(date)s', date=naturaltime(notification.created_at)) }}
+
+			{% if not notification.is_checked %}
+				<button
+					class="btn btn-link" 
+					style="color: darkred;"
+					check-url="{{ url_for('accounts.check_notification', id=notification.id) }}"
+					onclick="onClickCheckNotificationButton(this)"
+				>
+					| {{ _('Mark as viewed') }}.
+				</button>
+			{% endif %}
+		</div>
+		<div class="card-body">
+			<blockquote class="blockquote mb-0">
+				<p>{{ notification.text|safe }}</p>
+			</blockquote>
+		</div>
+	</div>
+{% endfor %}

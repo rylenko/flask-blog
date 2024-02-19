@@ -1,0 +1,30 @@
+
+
+<button 
+	class="btn btn-danger"
+	id="reply-cancel-btn" 
+	onclick="onClickReplyCancelButton()" 
+	style="display: none;"
+>X</button>
+<h3 id="reply-info"></h3>
+
+<form
+	method="POST" id='comment-form' class="mb-5"
+	action="{{ url_for('posts.comment', slug=post.slug) }}"
+>
+	{{ macros.render_form_body(comment_form) }}
+</form>
+
+{% if comments_page.items %}
+	<div class="infinite-container">
+		{% for comment in comments_page.items %}
+			{% include "_includes/posts/detail/comment.html" %}
+		{% endfor %}
+	</div>
+
+	{% if comments_page.has_next %}
+		<a class="infinite-more-link" href="?page={{ comments_page.next_num }}"></a>
+	{% endif %}
+{% else %}
+	<h1 align="center">{{ _('This post has no comments yet.') }}</h1>
+{% endif %}
